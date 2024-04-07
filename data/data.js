@@ -92,7 +92,7 @@ const totalMovieData = [
   {
     movie_name: "Terminator 2: Judgment Day.jpg",
     release_year: 1991,
-    thumbnail_img: "t2",
+    thumbnail_img: "t2.jpg",
     rating: 8.6,
   },
   {
@@ -294,3 +294,5 @@ const totalMovieData = [
     rating: 7.5,
   },
 ];
+
+
