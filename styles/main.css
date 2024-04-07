@@ -20,6 +20,10 @@ body {
   background-color: var(--background-color);
 }
 
+button {
+  cursor: pointer;
+}
+
 .AppContainer {
   height: 100vh;
   width: 100vw;
@@ -38,10 +42,11 @@ body {
 }
 
 .AppTitle {
-  border: solid 1px green;
   width: 50%;
   max-width: 50%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .AppTitle h1 {
@@ -50,8 +55,30 @@ body {
 }
 
 .SearchContainer {
-  border: solid 1px red;
   width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.SearchContainer input {
+  flex: 1;
+  margin-right: -1px;
+  width: 50%;
+  height: 30%;
+}
+
+.SearchContainer button {
+  margin-left: -1px;
+  width: 25%;
+  padding-left: 5px;
+  margin-right: 5px;
+  background-color: var(--background-color);
+  color: var(--primary-white);
+  height: 30%;
+}
+
+.SearchContainer button:hover {
+  color: var(--secondary-color);
 }
 
 /* For tablets (768px to 991px) */
