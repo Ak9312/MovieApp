@@ -47,6 +47,7 @@ button {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .AppTitle h1 {
@@ -94,7 +95,6 @@ button {
   height: 15%;
   color: var(--primary-white);
   display: flex;
-  align-items: center;
 }
 
 .SortControlContainer p {
@@ -110,10 +110,72 @@ button {
   border-radius: 10px;
   background-color: var(--primary-color);
   border: none;
+  margin-top: 21px;
 }
 
 .SortControlContainer button:hover {
   background-color: var(--secondary-color);
+}
+
+.OutputContainer {
+  height: 100%;
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.MovieCardContainer {
+  width: 200px;
+  height: 300px;
+  margin: 30px;
+}
+
+.MovieCardThumbnailContainer {
+  width: 100%;
+  height: 70%;
+}
+
+.MovieCardThumbnailContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.MovieInfoContainer {
+  width: 100%;
+  height: 30%;
+  background-color: var(--card-background);
+  color: var(--secondary-white);
+}
+
+.MovieInfoTitleContainer {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 5px;
+  padding: 3px;
+}
+
+.MovieInfoYearContainer {
+  width: 100%;
+  height: 30%;
+  margin-left: 3px;
+}
+
+.MovieInfoRatingContainer {
+  width: 100%;
+  height: 40%;
+  color: var(--secondary-white);
+  margin-left: 3px;
+}
+
+.fa-solid.fa-star {
+  color: var(--primary-color);
 }
 
 /* For tablets (768px to 991px) */
@@ -126,6 +188,28 @@ button {
   }
   .SearchContainer {
     width: 40%;
+  }
+
+  .SortControlContainer {
+    margin-top: 10rem;
+  }
+
+  .MovieCardContainer {
+    width: 200px;
+    height: 300px;
+    margin: 50px;
+  }
+
+  .OutputContainer {
+    height: 100%;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
   }
 }
 
@@ -143,5 +227,16 @@ button {
 
   .SortControlContainer button {
     margin-right: 60px;
+  }
+
+  .MovieCardContainer {
+    width: 200px;
+    height: 300px;
+    margin: 30px;
+  }
+
+  .OutputContainer {
+    display: flex;
+    justify-content: start;
   }
 }
