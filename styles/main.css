@@ -206,7 +206,7 @@ button {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start; 
     justify-content: center;
 
     flex-wrap: wrap;
@@ -238,5 +238,7 @@ button {
   .OutputContainer {
     display: flex;
     justify-content: start;
+    align-items: flex-start; 
+
   }
 }
