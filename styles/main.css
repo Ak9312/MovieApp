@@ -125,7 +125,7 @@ button {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .MovieCardContainer {
@@ -230,8 +230,8 @@ button {
   }
 
   .MovieCardContainer {
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     margin: 30px;
   }
 
