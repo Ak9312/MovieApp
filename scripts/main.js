@@ -5,6 +5,15 @@ window.addEventListener("load", () => {
 });
 
 function renderMovieData(movieData) {
+  //Clearing Output Container
+  const appContainer = document.querySelector(".AppContainer");
+  const outputContainer = document.querySelector(".OutputContainer");
+  appContainer.removeChild(outputContainer);
+
+  const newOutputContainer = document.createElement("div");
+  newOutputContainer.classList.add("OutputContainer");
+  appContainer.appendChild(newOutputContainer);
+
   //Rendering New Movie
 
   movieData.map((movie, index) => {
@@ -16,6 +25,14 @@ function renderMovieData(movieData) {
     //Rendering New MovieCardThumbnail
 
     const newMovieThumbnail = document.createElement("div");
+
+    //Rendering Unique Movie Image for Each Movie
+    const moviePoster = document.createElement("img");
+
+    moviePoster.src = "images/" + movie.thumbnail_img;
+    moviePoster.alt = "movie_" + index;
+
+    newMovieThumbnail.appendChild(moviePoster);
     newMovieThumbnail.classList.add("MovieCardThumbnailContainer");
 
     newMovie.appendChild(newMovieThumbnail);
@@ -26,6 +43,7 @@ function renderMovieData(movieData) {
 
     //Rendering New MovieCardInfoTitleContainer
     const newMovieInfoTitleContainer = document.createElement("div");
+
     newMovieInfoTitleContainer.classList.add("MovieInfoTitleContainer");
     newMovieInfoTitleContainer.textContent = movie.movie_name;
 
@@ -34,15 +52,27 @@ function renderMovieData(movieData) {
     //Rendering New MovieCardInfoReleaseYearContainer
     const newMovieInfoYearContainer = document.createElement("div");
     newMovieInfoYearContainer.classList.add("MovieInfoYearContainer");
-    newMovieInfoYearContainer.textContent = movie.release_year;
+
+    newMovieInfoYearContainer.textContent = "(" + movie.release_year + ")";
 
     newMovieInfo.appendChild(newMovieInfoYearContainer);
 
     //Rendering New MovieCardInfoRating
     const newMovieInfoRatingContainer = document.createElement("div");
-    newMovieInfoRatingContainer.classList.add("MovieInfoRatingContainer");
+    //  Rendering Star Icon
+    const starIconContainer = document.createElement("div");
+    const starIcon = document.createElement("i");
+    starIcon.classList.add("fa-solid", "fa-star");
+    starIconContainer.appendChild(starIcon);
+    //  Rendering Movie Rating Value
+    const movieRatingValue = document.createElement("div");
+    movieRatingValue.textContent = movie.rating;
 
-    newMovieInfoRatingContainer.textContent = movie.rating;
+    // Append  Star Icon and Movie Rating Value to newMovieInfoRatingContainer
+    newMovieInfoRatingContainer.appendChild(starIconContainer);
+    newMovieInfoRatingContainer.appendChild(movieRatingValue);
+
+    newMovieInfoRatingContainer.classList.add("MovieInfoRatingContainer");
 
     newMovieInfo.appendChild(newMovieInfoRatingContainer);
 
