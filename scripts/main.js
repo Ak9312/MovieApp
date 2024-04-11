@@ -96,7 +96,7 @@ document.querySelector(".YearSortButton").addEventListener("click", () => {
 //Rendering Movies Based on Rating
 document.querySelector(".RatingSortButton").addEventListener("click", () => {
   newMovieData = totalMovieData.slice();
-  newMovieData.sort((a, b) => a.rating - b.rating);
+  newMovieData.sort((a, b) => b.rating - a.rating);
   renderMovieData(newMovieData);
 });
 
