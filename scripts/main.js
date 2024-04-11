@@ -1,3 +1,5 @@
+let newMovieData = [];
+
 window.addEventListener("load", () => {
   const navBarHeight = document.querySelector(".NavBarContainer").offsetHeight;
   const content = document.querySelector(".Content");
@@ -83,3 +85,30 @@ function renderMovieData(movieData) {
 }
 
 renderMovieData(totalMovieData);
+
+//Rendering Movies Based on Year
+document.querySelector(".YearSortButton").addEventListener("click", () => {
+  newMovieData = totalMovieData.slice();
+  newMovieData.sort((a, b) => b.release_year - a.release_year);
+  renderMovieData(newMovieData);
+});
+
+//Rendering Movies Based on Rating
+document.querySelector(".RatingSortButton").addEventListener("click", () => {
+  newMovieData = totalMovieData.slice();
+  newMovieData.sort((a, b) => a.rating - b.rating);
+  renderMovieData(newMovieData);
+});
+
+//Rendering Movies Based on Alphabetical Order
+document.querySelector(".TitleSortButton").addEventListener("click", () => {
+  newMovieData = totalMovieData.slice();
+  newMovieData.sort((a, b) => {
+    if (a.movie_name > b.movie_name) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+  renderMovieData(newMovieData);
+});
