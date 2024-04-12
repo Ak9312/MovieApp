@@ -128,10 +128,30 @@ button {
   align-items: flex-start;
 }
 
+.OutputContainer h2 {
+  color: var(--primary-white);
+  text-align: center;
+  margin-left: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .MovieCardContainer {
   width: 200px;
   height: 300px;
   margin: 30px;
+  animation: fadeIn 3s;
+}
+
+.MovieCardContainer:hover {
+  border: 5px solid var(--secondary-color);
 }
 
 .MovieCardThumbnailContainer {

@@ -8,13 +8,7 @@ window.addEventListener("load", () => {
 
 function renderMovieData(movieData) {
   //Clearing Output Container
-  const appContainer = document.querySelector(".AppContainer");
-  const outputContainer = document.querySelector(".OutputContainer");
-  appContainer.removeChild(outputContainer);
-
-  const newOutputContainer = document.createElement("div");
-  newOutputContainer.classList.add("OutputContainer");
-  appContainer.appendChild(newOutputContainer);
+  clearOutputContainer();
 
   //Rendering New Movie
 
@@ -111,4 +105,48 @@ document.querySelector(".TitleSortButton").addEventListener("click", () => {
     }
   });
   renderMovieData(newMovieData);
+});
+
+function clearOutputContainer() {
+  const appContainer = document.querySelector(".AppContainer");
+  const outputContainer = document.querySelector(".OutputContainer");
+  appContainer.removeChild(outputContainer);
+
+  const newOutputContainer = document.createElement("div");
+  newOutputContainer.classList.add("OutputContainer");
+  appContainer.appendChild(newOutputContainer);
+}
+
+//Search the required movie.
+function filterMovies(searchString) {
+  return totalMovieData.filter((movie) =>
+    movie.movie_name.toLowerCase().includes(searchString.toLowerCase())
+  );
+}
+
+//Render the filtered movie.
+function renderFilteredMovies(searchString) {
+  const filteredMovies = filterMovies(searchString);
+
+  if (filteredMovies.length === 0) {
+    renderForNoMovies(searchString);
+    return;
+  }
+  renderMovieData(filteredMovies);
+}
+
+// Render for no movies.
+function renderForNoMovies(searchString) {
+  //Clearing Output Container
+  clearOutputContainer();
+
+  const notFoundText = document.createElement("h2");
+  notFoundText.textContent = `No movies found for '${searchString}'`;
+  document.querySelector(".OutputContainer").appendChild(notFoundText);
+}
+
+document.querySelector(".SearchButton").addEventListener("click", () => {
+  const searchString = document.querySelector(".InputBox").value;
+  renderFilteredMovies(searchString);
+  document.querySelector(".InputBox").value = "";
 });
